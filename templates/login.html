@@ -153,7 +153,8 @@
         }
 
         function is_name(asValue) {
-            var regExp = /^[가-힣]{2,6}$/;
+            var regExp = /^[가-힣]+$/;
+            return regExp.test(asValue);
         }
 
         function check_dup() {
