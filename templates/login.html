@@ -46,7 +46,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "/sign_in",
+                url: "/api/profile/login",
                 data: {
                     username_give: username,
                     password_give: password
@@ -115,7 +115,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: "/sign_up/save",
+                url: "/api/profile/regist",
                 data: {
                     username_give: username,
                     password_give: password,
@@ -125,7 +125,7 @@
                 },
                 success: function (response) {
                     alert("회원가입 완료!")
-                    window.location.replace("/login")
+                    window.location.replace("/api/profile")
                 }
             });
 
@@ -173,7 +173,7 @@
             $("#help-id").addClass("is-loading")
             $.ajax({
                 type: "POST",
-                url: "/sign_up/check_dup",
+                url: "/api/profile/regist/check_dup",
                 data: {
                     username_give: username
                 },
