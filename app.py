@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 
 SECRET_KEY = 'SPARTA'
 
-client = MongoClient('mongodb+srv://rlawlgh3894:test123!@cluster0.ktjzj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+## DB제거
 db = client.makeCool
 
 
