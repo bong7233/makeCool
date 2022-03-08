@@ -1,0 +1,193 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(#6a9dfc, #81ecec);
+  border-radius: 50px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+/*뒷배경*/
+.backImg {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://blog.kakaocdn.net/dn/bQDapn/btqDTFYL77T/4mCk4kWJDgR3rjdIRXntGk/img.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -3;
+  opacity: 0.6;
+}
+
+/*header*/
+header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+header > section {
+  width: 98%;
+  height: 6rem;
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  width: 15%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerInfo {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoBox {
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/basic_profile_img.png");
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/*정보변경 폼*/
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 6rem);
+  margin: 0 auto;
+}
+
+.hero-body > h1 {
+  color: black;
+}
+
+.hero-body > span {
+  font-size: 40px;
+  color: white;
+}
+
+/*detailBox*/
+.detailBox {
+  display: none;
+  width: 220px;
+  height: 350px;
+  background-color: black;
+  position: fixed;
+  top: 6rem;
+  right: 1%;
+  z-index: 30;
+  opacity: 0.95;
+  overflow: hidden;
+  border: 1px solid gray;
+}
+
+#profile_container {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+#profile_box2 {
+  width: 70px;
+  height: 70px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 10px 0 10px;
+}
+
+.nickName > span {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#edit_container {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.editLogout,
+.editFavorite,
+.editPassword {
+  width: 200px;
+  margin: 0 10px 0 10px;
+  color: white;
+  display: flex;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  height: 6rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_overview {
+  color: white;
+  text-align: center;
+}

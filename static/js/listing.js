@@ -4,6 +4,10 @@ $(document).ready(function () {
 
 function listing_neck() {
   $("#thumbnail-box").empty();
+  $(".listingBox_neck").css("opacity", "1");
+  $(".listingBox_waist").css("opacity", "0.6");
+  $(".listingBox_wrist").css("opacity", "0.6");
+  $(".listingBox_lowerBody").css("opacity", "0.6");
   $.ajax({
     type: "GET",
     url: "/api/main/neck",
@@ -30,7 +34,7 @@ function listing_neck() {
                                 <img
                                   src="${img}"
                                   width="100%"
-                                  height="100%"
+                                  height="180px"
                                   title="${title}"
                                   alt="${title}"
                                 />
@@ -48,6 +52,10 @@ function listing_neck() {
 
 function listing_waist() {
   $("#thumbnail-box").empty();
+  $(".listingBox_neck").css("opacity", "0.6");
+  $(".listingBox_waist").css("opacity", "1");
+  $(".listingBox_wrist").css("opacity", "0.6");
+  $(".listingBox_lowerBody").css("opacity", "0.6");
   $.ajax({
     type: "GET",
     url: "/api/main/waist",
@@ -74,7 +82,7 @@ function listing_waist() {
                                 <img
                                   src="${img}"
                                   width="100%"
-                                  height="100%"
+                                  height="180px"
                                   title="${title}"
                                   alt="${title}"
                                 />
@@ -92,6 +100,10 @@ function listing_waist() {
 
 function listing_wrist() {
   $("#thumbnail-box").empty();
+  $(".listingBox_neck").css("opacity", "0.6");
+  $(".listingBox_waist").css("opacity", "0.6");
+  $(".listingBox_wrist").css("opacity", "1");
+  $(".listingBox_lowerBody").css("opacity", "0.6");
   $.ajax({
     type: "GET",
     url: "/api/main/wrist",
@@ -118,7 +130,7 @@ function listing_wrist() {
                                 <img
                                   src="${img}"
                                   width="100%"
-                                  height="100%"
+                                  height="180px"
                                   title="${title}"
                                   alt="${title}"
                                 />
@@ -136,6 +148,10 @@ function listing_wrist() {
 
 function listing_lowerBody() {
   $("#thumbnail-box").empty();
+  $(".listingBox_neck").css("opacity", "0.6");
+  $(".listingBox_waist").css("opacity", "0.6");
+  $(".listingBox_wrist").css("opacity", "0.6");
+  $(".listingBox_lowerBody").css("opacity", "1");
   $.ajax({
     type: "GET",
     url: "/api/main/lowerBody",
@@ -161,7 +177,7 @@ function listing_lowerBody() {
                                 <img
                                   src="${img}"
                                   width="100%"
-                                  height="100%"
+                                  height="180px"
                                   title="${title}"
                                   alt="${title}"
                                 />

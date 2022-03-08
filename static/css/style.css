@@ -1,9 +1,8 @@
 * {
   font-family: "Noto Sans KR", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 *::-webkit-scrollbar {
@@ -25,13 +24,7 @@ a {
 }
 body {
   width: 100%;
-}
-.clearFix,
-.clearFix::after,
-.clearFix::before {
-  display: block;
-  content: "";
-  clear: both;
+  background-color: black;
 }
 
 button {
@@ -42,6 +35,134 @@ button {
 button:active,
 button:focus {
   outline: none;
+}
+
+/*뒷배경*/
+.backImg {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://blog.kakaocdn.net/dn/bQDapn/btqDTFYL77T/4mCk4kWJDgR3rjdIRXntGk/img.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -3;
+  opacity: 0.6;
+}
+
+/*header*/
+header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+header > section {
+  width: 98%;
+  height: 6rem;
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  width: 15%;
+  height: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerInfo {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoBox {
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/basic_profile_img.png");
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
+}
+/* toggleBtn*/
+.listingContainer {
+  width: 80%;
+  height: 14rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
+
+.listingBox_neck {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: black;
+  background-image: url("https://health.chosun.com/site/data/img_dir/2019/11/11/2019111103433_0.jpg");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+  color: transparent;
+}
+
+.listingBox_waist {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: black;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSItESuBiAkIxe2dhY_SLH-6sNvq3pIHVfoDg&usqp=CAU");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+  color: transparent;
+}
+
+.listingBox_wrist {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: black;
+  background-image: url("https://img1.daumcdn.net/thumb/R1280x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/2xMI/image/pByfRAiYV62fT1FUbngkR0Xalp8.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+  color: transparent;
+}
+
+.listingBox_lowerBody {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: black;
+  background-image: url("https://blog.kakaocdn.net/dn/bkXeBd/btqAtcLa4aI/cqDXKJPjGctMJG3SbiSXIk/img.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+  color: transparent;
+}
+.listingBox_waist:hover,
+.listingBox_wrist:hover,
+.listingBox_lowerBody:hover,
+.listingBox_neck:hover {
+  transform: scale(1.05);
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 /* thumbnail */
@@ -57,4 +178,80 @@ button:focus {
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
+}
+
+/*detailBox*/
+.detailBox {
+  display: none;
+  width: 220px;
+  height: 350px;
+  background-color: black;
+  position: fixed;
+  top: 6rem;
+  right: 1%;
+  z-index: 30;
+  opacity: 0.95;
+  overflow: hidden;
+  border: 1px solid gray;
+}
+
+#profile_container {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+}
+
+#profile_box2 {
+  width: 70px;
+  height: 70px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 10px 0 10px;
+}
+
+.nickName > span {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#edit_container {
+  width: 100%;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.editLogout,
+.editFavorite,
+.editPassword {
+  width: 200px;
+  margin: 0 10px 0 10px;
+  color: white;
+  display: flex;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_overview {
+  color: white;
+  text-align: center;
 }

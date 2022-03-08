@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 
 app = Flask(__name__)
 client = MongoClient(
-    'mongodb+srv://rlawlgh3894:Rkddkwl3894!@cluster0.ktjzj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+    'mongodb+srv://rlawlgh3894:test123!@cluster0.ktjzj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 application = Flask(import_name=__name__)
 db = client.makeCool
 
