@@ -1,0 +1,60 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(#6a9dfc, #81ecec);
+  border-radius: 50px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  width: 100%;
+}
+.clearFix,
+.clearFix::after,
+.clearFix::before {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+/* thumbnail */
+.thumbnail {
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+.thunmbnail__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
