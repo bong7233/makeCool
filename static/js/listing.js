@@ -1,25 +1,28 @@
-$(document).ready(function () {
-  listing_neck();
+const genres = document.querySelectorAll(".listing_genres");
+
+genres.forEach(function (genre) {
+  genre.addEventListener("click", clickGenreBtn);
+  genre.addEventListener("click", listing);
 });
 
-function listing_neck() {
+function clickGenreBtn(e) {
   $("#thumbnail-box").empty();
-  $(".listingBox_neck").css("opacity", "1");
-  $(".listingBox_waist").css("opacity", "0.6");
-  $(".listingBox_wrist").css("opacity", "0.6");
-  $(".listingBox_lowerBody").css("opacity", "0.6");
+  let genre = e.currentTarget.getAttribute("data-genre");
+  genreBucket = genre;
+  console.log(genreBucket);
   $.ajax({
-    type: "GET",
-    url: "/api/main/neck",
-    data: {},
+    type: "POST",
+    url: "/api/videos/buName",
+    data: { buName_give: genreBucket },
     success: function (response) {
       console.log(response);
-      let rows = response.main_list;
+      let rows = response.list;
       for (let i = 0; i < 15; i++) {
         let title = rows[i].title;
         let img = rows[i].image;
         let video_id = rows[i].video_id;
         let desc = rows[i].desc;
+        let bu_name = rows[i].bu_name;
         let temp_html = `<button
                             type="button"
                             class="thumbnail"
@@ -28,6 +31,7 @@ function listing_neck() {
                             data-bs-title="${title}"
                             data-bs-desc="${desc}"
                             data-bs-videoID="${video_id}"
+                            data-bs-buName="${bu_name}"
                           >
                             <div class="col">
                               <div class="card shadow-sm">
@@ -50,145 +54,26 @@ function listing_neck() {
   });
 }
 
-function listing_waist() {
-  $("#thumbnail-box").empty();
-  $(".listingBox_neck").css("opacity", "0.6");
-  $(".listingBox_waist").css("opacity", "1");
-  $(".listingBox_wrist").css("opacity", "0.6");
-  $(".listingBox_lowerBody").css("opacity", "0.6");
+function listing() {
   $.ajax({
     type: "GET",
-    url: "/api/main/waist",
+    url: "/api/videos",
     data: {},
     success: function (response) {
       console.log(response);
-      let rows = response.main_list;
-      for (let i = 0; i < 15; i++) {
-        let title = rows[i].title;
-        let img = rows[i].image;
-        let video_id = rows[i].video_id;
-        let desc = rows[i].desc;
-        let temp_html = `<button
-                            type="button"
-                            class="thumbnail"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                            data-bs-title="${title}"
-                            data-bs-desc="${desc}"
-                            data-bs-videoID="${video_id}"
-                          >
-                            <div class="col">
-                              <div class="card shadow-sm">
-                                <img
-                                  src="${img}"
-                                  width="100%"
-                                  height="180px"
-                                  title="${title}"
-                                  alt="${title}"
-                                />
-                                <div class="card-body">
-                                  <p class="thunmbnail__title card-text">${title}</p>
-                                </div>
-                              </div>
-                            </div>
-                          </button>`;
-        $("#thumbnail-box").append(temp_html);
-      }
     },
   });
 }
 
-function listing_wrist() {
-  $("#thumbnail-box").empty();
-  $(".listingBox_neck").css("opacity", "0.6");
-  $(".listingBox_waist").css("opacity", "0.6");
-  $(".listingBox_wrist").css("opacity", "1");
-  $(".listingBox_lowerBody").css("opacity", "0.6");
-  $.ajax({
-    type: "GET",
-    url: "/api/main/wrist",
-    data: {},
-    success: function (response) {
-      console.log(response);
-      let rows = response.main_list;
-      for (let i = 0; i < 15; i++) {
-        let title = rows[i].title;
-        let img = rows[i].image;
-        let video_id = rows[i].video_id;
-        let desc = rows[i].desc;
-        let temp_html = `<button
-                            type="button"
-                            class="thumbnail"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                            data-bs-title="${title}"
-                            data-bs-desc="${desc}"
-                            data-bs-videoID="${video_id}"
-                          >
-                            <div class="col">
-                              <div class="card shadow-sm">
-                                <img
-                                  src="${img}"
-                                  width="100%"
-                                  height="180px"
-                                  title="${title}"
-                                  alt="${title}"
-                                />
-                                <div class="card-body">
-                                  <p class="thunmbnail__title card-text">${title}</p>
-                                </div>
-                              </div>
-                            </div>
-                          </button>`;
-        $("#thumbnail-box").append(temp_html);
-      }
-    },
-  });
-}
+/*************************
+ * 로그아웃
+ **************************/
+$(document).ready(function () {
+  $("#logout").click(function () {
+    $.removeCookie("mytoken");
 
-function listing_lowerBody() {
-  $("#thumbnail-box").empty();
-  $(".listingBox_neck").css("opacity", "0.6");
-  $(".listingBox_waist").css("opacity", "0.6");
-  $(".listingBox_wrist").css("opacity", "0.6");
-  $(".listingBox_lowerBody").css("opacity", "1");
-  $.ajax({
-    type: "GET",
-    url: "/api/main/lowerBody",
-    data: {},
-    success: function (response) {
-      let rows = response.main_list;
-      for (let i = 0; i < 15; i++) {
-        let title = rows[i].title;
-        let img = rows[i].image;
-        let video_id = rows[i].video_id;
-        let desc = rows[i].desc;
-        let temp_html = `<button
-                            type="button"
-                            class="thumbnail"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                            data-bs-title="${title}"
-                            data-bs-desc="${desc}"
-                            data-bs-videoID="${video_id}"
-                          >
-                            <div class="col">
-                              <div class="card shadow-sm">
-                                <img
-                                  src="${img}"
-                                  width="100%"
-                                  height="180px"
-                                  title="${title}"
-                                  alt="${title}"
-                                />
-                                <div class="card-body">
-                                  <p class="thunmbnail__title card-text">${title}</p>
-                                </div>
-                              </div>
-                            </div>
-                          </button>`;
-        $("#thumbnail-box").append(temp_html);
-      }
-    },
+    alert("로그아웃!");
+
+    window.location.href = "/";
   });
-}
+});

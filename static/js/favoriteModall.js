@@ -12,7 +12,6 @@ exampleModal.addEventListener("show.bs.modal", function (event) {
   const modalVideo = exampleModal.querySelector(".modal-video");
   videoid = videoID;
   getLike();
-  getComment();
   modalVideo.src = `https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&loop=1&playlist=${videoID}`;
   modalTitle.textContent = title;
   modalDesc.textContent = desc;

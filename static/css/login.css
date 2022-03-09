@@ -26,9 +26,8 @@ a {
 
 body {
   width: 100%;
+  background-color: #539ddb;
   height: 100vh;
-  min-height: 1000px;
-
 }
 
 button {
@@ -44,8 +43,8 @@ button:focus {
 /*뒷배경*/
 .backImg {
   width: 100%;
-  height: 100vh;
-  background-color: #539ddb;
+
+
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,10 +54,9 @@ button:focus {
   opacity: 0.6;
 }
 
-/*header*/
 header {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
 }
@@ -72,7 +70,6 @@ header > section {
   align-items: center;
   justify-content: space-between;
 }
-
 
 .headerLogo {
   width: 200px;
@@ -91,6 +88,13 @@ header > section {
   width: 125px;
 }
 
+.headerInfo {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .infoBox {
   width: 70px;
@@ -109,89 +113,71 @@ header > section {
 }
 
 .hero-body > h1 {
-  color: black;
-}
-
-.hero-body > span {
-  font-size: 40px;
   color: white;
 }
 
-/*detailBox*/
-.detailBox {
-  display: none;
-  width: 200px;
-  height: 300px;
-  background-color: rgba(256, 256, 256, 0.7);
-  position: fixed;
-  top: 6rem;
-  right: 1%;
-  z-index: 30;
-  opacity: 0.95;
-  overflow: hidden;
-
-  border-radius: 10px;
+.hero-body > span {
+  font-size: 20px;
+  color: white;
 }
 
-#profile_container {
-  width: 200px;
-  height: 75px;
-  display: flex;
-  align-items: center;
-}
-
-#profile_box2 {
-  width: 70px;
-  height: 70px;
-  border-radius: 1rem;
+.container {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin: 0 10px 0 10px;
 }
 
-.nickName > span {
-  color: #205b8f;
-  font-size: 18px;
+.box {
+  width: 500px;
+}
+
+#btnBox {
+  width: 100%;
+  height: 3rem;
+  background-color: #084a83;
+  margin-bottom: -1rem;
+  border-radius: 4px;
+}
+
+#btnBox:hover {
+  background-color: #9cbbcd;
+}
+
+.link-primary {
+  font-size: 12px;
+}
+.link-primary:hover {
+  color: blue;
+}
+
+#pink-btn-box > h4 {
+  text-align: center;
+}
+
+.is-mobile {
+  display: flex;
+}
+
+.loginBtn {
+  width: 100%;
+  height: 2rem;
   font-weight: 600;
-}
-
-#edit_container {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.editLogout,
-.editFavorite,
-.editPassword {
-  width: 100%;
-  margin: 0 10px 0 10px;
-  color: #539ddb;
-  display: flex;
-}
-
-svg {
-  width: 25px;
-  height: 25px;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 /*footer*/
 footer {
   width: 100%;
-  height: 40px;
+  height: 6rem;
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .footer_overview {
-  color: #205b8f;
+  color: white;
   text-align: center;
-  font-size: 12px;
 }
-
