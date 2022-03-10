@@ -60,7 +60,7 @@
 
 <h2> 📷 시연 영상 </h2>
 
-[![시연 영상](이미지)](https://www.youtube.com/watch?v=GvtbNAqW754)
+[![시연 영상](이미지)]()
 
 <h2> ✒ 디자인 초안 <a href="https://www.figma.com/file/8FhvG6t6EQMniAwGXoSoWS/%EC%8B%9C%EC%9B%90%ED%95%98%EA%B2%8C~!?node-id=0%3A1">보러가기</a></h2>
 
