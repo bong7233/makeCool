@@ -1,0 +1,283 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(#6a9dfc, #81ecec);
+  border-radius: 50px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  width: 100%;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+/*뒷배경*/
+.backImg {
+  width: 100%;
+  height: 100vh;
+  background-color: #539ddb;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  z-index: -3;
+}
+
+/*header*/
+header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+header > section {
+  width: 98%;
+  height: 6rem;
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
+}
+.headerLogo > a > img {
+  height: 60px;
+  width: 125px;
+}
+
+.headerInfo {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoBox {
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/basic_profile_img.png");
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* thumbnail */
+#thumbnail-box {
+  width: 90%;
+  margin: 0 auto;
+}
+.thumbnail {
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thunmbnail__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+/*detailBox*/
+.detailBox {
+  display: none;
+  width: 160px;
+  height: 250px;
+  background-color: rgba(256, 256, 256);
+  position: fixed;
+  top: 6rem;
+  right: 2%;
+  z-index: 30;
+  opacity: 0.95;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#profile_container {
+  width: 200px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+
+.nickName > span {
+  color: #205b8f;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+#edit_container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.editLogout,
+.editFavorite,
+.editPassword {
+  width: 100%;
+  margin: 0 10px 0 10px;
+  display: flex;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+/*modal*/
+.comment-icon {
+  margin: 0 10px;
+}
+
+.write-comment {
+  display: none;
+  position: relative;
+  height: 100px;
+}
+
+.write-comment > textarea {
+  position: relative;
+  width: 100%;
+  padding-right: 50px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.write-comment > button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0px solid #000;
+  border-radius: 30px;
+  background-color: #dc6161;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+}
+
+.comment-list {
+  width: 100%;
+}
+
+.comm-one > p {
+  margin-left: 10px;
+}
+
+.comm-one {
+  position: relative;
+  margin: 0 auto;
+}
+
+.comm-one > i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#heart {
+  color: red;
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_overview {
+  color: #205b8f;
+  text-align: center;
+  font-size: 12px;
+}
+.container {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px 0px;
+  /*box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;*/
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+/* media Query */
+
+@media screen and (max-width: 500px) {
+  .footer_overview {
+    font-size: 10px;
+  }
+
+  footer {
+    position: static;
+    background-color: #539ddb;
+  }
+
+  .infoBox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .headerLogo {
+    width: 70px;
+    height: 70%;
+  }
+  .headerLogo > a > img {
+    height: 40px;
+    width: 70px;
+  }
+
+  .hero-body > span {
+    font-size: 28px;
+    color: white;
+  }
+}
