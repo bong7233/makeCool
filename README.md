@@ -51,7 +51,7 @@
         </td>
         <td width="25%" align="center"><strong>회원정보수정 + 즐겨찾기 기능 구현</strong>
         </td>
-        <td width="25%" align="center"><strong>좋아요 + 댓글 기능 구현 / 이미지 제작 / 디자인</strong>
+        <td width="25%" align="center"><strong>좋아요 + 댓글 기능 구현 / 로고 및 이미지 파일수집 / 디자인</strong>
         </td>
         <td width="25%" align="center"><strong>페이지 레이아웃 구성 + 프론트 엔드 작업 </strong>
         </td>
