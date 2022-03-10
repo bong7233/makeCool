@@ -49,7 +49,7 @@
     <tr>
         <td width="25%" align="center"><strong>로그인 + 회원가입 기능 구현</strong>
         </td>
-        <td width="25%" align="center"><strong>회원수정 + 즐겨찾기 기능 구현</strong>
+        <td width="25%" align="center"><strong>회원정보수정 + 즐겨찾기 기능 구현</strong>
         </td>
         <td width="25%" align="center"><strong>좋아요 + 댓글 기능 구현 / 이미지 제작 / 디자인</strong>
         </td>
