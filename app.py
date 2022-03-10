@@ -67,6 +67,19 @@ def favorite_home():
         return redirect(url_for("login", msg="로그인 정보가 존재하지 않습니다."))
 
 
+# 즐겨찾기 비디오 불러오기
+@app.route("/api/videos/favorite", methods=["GET"])
+def videos_p():
+    token_receive = request.cookies.get('mytoken')
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        user_info = (db.users.find_one({"id": payload['id']})['like'])
+
+        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", 'favorites': user_info})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for("home"))
+    
+    
 # 로그인한 유저 토큰검증 후 아이디 일치하는경우 information.html로 유저정보 전달
 @app.route('/api/information')
 def info():
@@ -81,6 +94,32 @@ def info():
     except jwt.exceptions.DecodeError:
         return redirect(url_for("login"))
 
+
+# 정보변경 API
+
+@app.route('/api/information', methods=['post'])
+def api_information():
+    token_receive = request.cookies.get('mytoken')
+    idload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+    user_info = db.users.find_one({"id": idload['id']})
+
+    id_receive = user_info["id"]
+    current_password = user_info['pw']
+    password_receive = request.form['password_give']
+
+    pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
+
+    if current_password == pw_hash:
+        print(pw_hash, current_password)
+        return jsonify({'result': 'fail', 'msg': '동일한 비밀번호는 사용할 수 없습니다'})
+    else:
+        result = db.users.find_one({'id': id_receive, 'pw': current_password})
+        print("다른 비밀 번호", result)
+        if result is not None:
+            db.users.update_one({'id': id_receive}, {
+                                '$set': {'pw': pw_hash}, })
+        return jsonify({'result': 'success', 'msg': '정보변경 완료!'})
+    
 
 # 로그인
 @app.route('/api/profile')
@@ -116,31 +155,6 @@ def sign_in():
     else:
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
 
-
-# 정보변경 API
-
-@app.route('/api/information', methods=['post'])
-def api_information():
-    token_receive = request.cookies.get('mytoken')
-    idload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-    user_info = db.users.find_one({"id": idload['id']})
-
-    id_receive = user_info["id"]
-    current_password = user_info['pw']
-    password_receive = request.form['password_give']
-
-    pw_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
-
-    if current_password == pw_hash:
-        print(pw_hash, current_password)
-        return jsonify({'result': 'fail', 'msg': '동일한 비밀번호는 사용할 수 없습니다'})
-    else:
-        result = db.users.find_one({'id': id_receive, 'pw': current_password})
-        print("다른 비밀 번호", result)
-        if result is not None:
-            db.users.update_one({'id': id_receive}, {
-                                '$set': {'pw': pw_hash}, })
-        return jsonify({'result': 'success', 'msg': '정보변경 완료!'})
 
 
 # 회원가입 API
@@ -321,19 +335,6 @@ def add_like():
         db.users.update_one({'id': id_receive}, {'$set': {'like': like}})
 
     return jsonify({'result': 'success', 'count': count})
-
-
-# 즐겨찾기 비디오 불러오기
-@app.route("/api/videos/favorite", methods=["GET"])
-def videos_p():
-    token_receive = request.cookies.get('mytoken')
-    try:
-        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        user_info = (db.users.find_one({"id": payload['id']})['like'])
-
-        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", 'favorites': user_info})
-    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
-        return redirect(url_for("home"))
 
 
 # 좋아요 해제
